@@ -1,8 +1,10 @@
 import React from 'react';
-import HybridApp from './src/App';
+import AppNavigator from './src/AppNavigator';
 
-export default class App extends React.Component {
+export default class App extends React.Component { 
   render() {
-    return <HybridApp />
+    return (
+      <AppNavigator />
+    );
   }
 }

@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
 import { StyleSheet, View, TextInput, Button} from 'react-native';
 
-export default class App extends Component {
+export default class Register extends Component {
   constructor() {
     super()
     this.state = {
@@ -130,3 +130,4 @@ const styles = StyleSheet.create({
     borderRadius: 6
   }
 });
+
