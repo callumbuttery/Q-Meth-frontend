@@ -1,10 +1,5 @@
 import React, {Component} from 'react';
-import { 
-  StyleSheet, 
-  Text, 
-  View, 
-  TextInput,
-  Button} from 'react-native';
+import { StyleSheet, View, TextInput, Button} from 'react-native';
 
 export default class App extends Component {
   constructor() {
@@ -14,22 +9,35 @@ export default class App extends Component {
       surname: "",
       email: "",
       password: "",
-      confirmPassword: ""
+      confirmPassword: ""  
     }
-    //this.handleChangeText = this.handleChangeText.bind(this)
-    this.handleChange=this.handleChange.bind(this);
+
+    this.handleChangeFirstName=this.handleChangeFirstName.bind(this);
+    this.handleChangeSurname=this.handleChangeSurname.bind(this);
+    this.handleChangeEmail=this.handleChangeEmail.bind(this);
+    this.handleChangePassword=this.handleChangePassword.bind(this);
+    this.handleChangePasswordConfirm=this.handleChangePasswordConfirm.bind(this);
   }
 
-  handleChange(event) {
-    this.setState({ [event.target.name] : event.target.value });
+  handleChangeFirstName = (textValue)=>{
+    this.setState({firstName : textValue})
   }
 
+  handleChangeSurname = (textValue)=>{
+    this.setState({surname : textValue})
+  }
 
-  //handleChangeText(newText) {
-    //this.setState({
-      //value: newText
-    //})
-  //}
+  handleChangeEmail = (textValue)=>{
+    this.setState({email : textValue})
+  }
+
+  handleChangePassword = (textValue)=>{
+    this.setState({password : textValue})
+  }
+
+  handleChangePasswordConfirm= (textValue)=>{
+    this.setState({confirmPassword : textValue})
+  }
 
   render(){
     return (
@@ -38,28 +46,28 @@ export default class App extends Component {
         name="firstName"
         placeholder="Name"
         firstName={this.state.firstName} 
-        onChange={this.handleChange}
+        onChangeText={this.handleChangeFirstName}
         style={styles.textBox}
         />
         <TextInput
         name="surname"
         placeholder="Surname"
         surname={this.state.surname} 
-        onChange={this.handleChange}
+        onChangeText={this.handleChangeSurname}
         style={styles.textBox}
         />
         <TextInput
         name="email"
         placeholder="Email"
         email={this.state.email} 
-        onChange={this.handleChange}
+        onChangeText={this.handleChangeEmail}
         style={styles.textBox}
         />
         <TextInput
         name="password"
         placeholder="Password"
         password={this.state.password} 
-        onChange={this.handleChange}
+        onChangeText={this.handleChangePassword}
         style={styles.textBox}
         secureTextEntry
         />
@@ -67,7 +75,7 @@ export default class App extends Component {
         name="confirmPassword"
         placeholder="Confirm password"
         confirmPassword={this.state.confirmPassword} 
-        onChange={this.handleChange}
+        onChangeText={this.handleChangePasswordConfirm}
         style={styles.textBox}
         secureTextEntry
         />
@@ -83,10 +91,12 @@ export default class App extends Component {
               );
           }}
           title="Register"
-          style={styles.button}
+          color='#ff3333'
+          width='50'
+          borderRadius='6'
           />
         </View>
-        
+
       </View>
     );
   }
