@@ -5,8 +5,10 @@ import {
   TextInput,
   Button,
   KeyboardAvoidingView,
-  Text
+  Text,
+  Image
 } from "react-native";
+import EdinburghNapierLogo from "./EdinburghNapierLogo.png"
 
 export default class Home extends React.Component {
   constructor() {
@@ -55,6 +57,10 @@ export default class Home extends React.Component {
           <Text style={styles.title}> Q-Methodology </Text>
         </View>
 
+        <View style={styles.logoContainer} >
+          <Image source={EdinburghNapierLogo} />
+        </View>
+
         <View style={styles.container}>
           <TextInput
             name="Email"
@@ -101,12 +107,14 @@ export default class Home extends React.Component {
   }
 }
 
+
 const styles = StyleSheet.create({
   container: {
+    flex: 1,
+    justifyContent: 'center',
     padding: 20,
-    paddingTop: 160,
-    paddingLeft: 30,
-    marginRight: 15
+    paddingLeft: 90,
+    paddingRight: 90,
   },
 
   input: {
@@ -123,7 +131,7 @@ const styles = StyleSheet.create({
     width: 100,
     textAlign: "center",
     marginBottom: 15,
-    marginLeft: 135
+    alignSelf: "center"
   },
 
   buttonText: {
@@ -138,11 +146,14 @@ const styles = StyleSheet.create({
   },
 
   logo: {
-    height: 200,
-    width: 500,
-    marginBottom: 0,
-    flex: 1
+    display: "flex",
+    height: 119,
+    width: 300,
+    alignSelf: "center",
+    justifyContent: "center",
+    marginTop: 50
   },
+
 
   logoContainer: {
     alignItems: "center",
